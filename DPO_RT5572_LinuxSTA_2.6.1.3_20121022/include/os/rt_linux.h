@@ -1256,7 +1256,11 @@ typedef struct usb_device_id USB_DEVICE_ID;
 #define RTUSB_SUBMIT_URB(pUrb)		usb_submit_urb(pUrb, GFP_ATOMIC)
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(2, 5, 0)
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 35)
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(3, 0, 51)
+#define RTUSB_URB_ALLOC_BUFFER(_dev, _size, _dma)	usb_alloc_coherent(_dev, _size, GFP_KERNEL, _dma)
+#else
 #define RTUSB_URB_ALLOC_BUFFER(_dev, _size, _dma)	usb_alloc_coherent(_dev, _size, GFP_ATOMIC, _dma)
+#endif
 #define RTUSB_URB_FREE_BUFFER(_dev, _size, _addr, _dma)	usb_free_coherent(_dev, _size, _addr, _dma)
 #else
 #define RTUSB_URB_ALLOC_BUFFER(_dev, _size, _dma)	usb_buffer_alloc(_dev, _size, GFP_ATOMIC, _dma)
