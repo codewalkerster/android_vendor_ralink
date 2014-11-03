@@ -267,8 +267,8 @@ CROSS_COMPILE =
 endif
 
 ifeq ($(PLATFORM),SMDK)
-LINUX_SRC = /home/odroid/projects/linux
-CROSS_COMPILE = /opt/toolchains/arm-eabi-4.6/bin/arm-eabi-
+LINUX_SRC = ../../../kernel/samsung/exynos5422
+CROSS_COMPILE = ../../../prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-
 endif
 
 ifeq ($(PLATFORM),RALINK_3352)
