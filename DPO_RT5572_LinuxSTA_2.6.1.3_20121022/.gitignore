@@ -1,0 +1,13 @@
+.gitignore
+
+*.ko
+*.mod.c
+*.o
+*.cmd
+
+Module.symvers
+modules.order
+
+os/linux/.tmp_versions/
+os/linux/Makefile
+tools/bin2h
