@@ -511,7 +511,7 @@ static void rt2870_late_resume(struct early_suspend *early)
         PRTMP_ADAPTER   pAd = container_of(early, RTMP_ADAPTER, early_suspend);
         DBGPRINT(RT_DEBUG_ERROR, ("%s\n", __func__));
 
-	printk("pAd->late_resume_flag = %d, VIRTUAL_IF_NUM(pAd) = %d\n", pAd->late_resume_flag, VIRTUAL_IF_NUM(pAd));
+	printk("pAd->late_resume_flag = %d, VIRTUAL_IF_NUM(pAd) = %ld\n", pAd->late_resume_flag, VIRTUAL_IF_NUM(pAd));
 	if ((pAd->late_resume_flag == TRUE) && (VIRTUAL_IF_NUM(pAd) == 0)) {
 		if (VIRTUAL_IF_UP((VOID *)pAd) != 0)
                 {
