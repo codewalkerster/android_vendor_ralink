@@ -240,9 +240,8 @@ CROSS_COMPILE =
 endif
 
 ifeq ($(PLATFORM),SMDK)
-# LINUX_SRC = /home/bhushan/itcenter/may28/linux-2.6-samsung
-LINUX_SRC = /home/odroid/projects/pegasus/4.2.2/kernel
-CROSS_COMPILE = /opt/toolchains/arm-2010q1/bin/arm-none-eabi-
+LINUX_SRC = $(PWD)
+CROSS_COMPILE = arm-none-linux-gnueabi-
 endif
 
 ifeq ($(PLATFORM),RALINK_3352)
